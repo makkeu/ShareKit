@@ -46,7 +46,7 @@
 	BOOL didPrepare;
 }
 @property(readonly) NSString *signature;
-@property(readonly) NSString *nonce;
+@property(copy,readwrite) NSString *nonce;
 
 - (id)initWithURL:(NSURL *)aUrl
 		 consumer:(OAConsumer *)aConsumer
