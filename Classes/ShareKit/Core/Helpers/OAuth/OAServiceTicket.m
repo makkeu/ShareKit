@@ -36,11 +36,13 @@
 }
 
 - (id)initWithRequest:(OAMutableURLRequest *)aRequest response:(NSHTTPURLResponse *)aResponse data:(NSData *)aData didSucceed:(BOOL)success {
-    [super init];
-    request = aRequest;
-    response = aResponse;
-	data = aData;
-    didSucceed = success;
+    if((self = [super init]))
+	{
+		self.request = aRequest;
+		self.response = aResponse;
+		self.data = aData;
+		self.didSucceed = success;
+	}
     return self;
 }
 
@@ -51,6 +53,14 @@
 	}
 	
 	return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+}
+
+- (void)dealloc
+{
+	[request release]; request = nil;
+	[response release]; response = nil;
+	[data release]; data = nil;
+	[super dealloc];
 }
 
 @end

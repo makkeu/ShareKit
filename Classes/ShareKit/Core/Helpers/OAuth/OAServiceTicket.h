@@ -35,10 +35,10 @@
 	NSData *data;
     BOOL didSucceed;
 }
-@property(readonly) OAMutableURLRequest *request;
-@property(readonly) NSHTTPURLResponse *response;
-@property(readonly) NSData *data;
-@property(readonly) BOOL didSucceed;
+@property(retain) OAMutableURLRequest *request;
+@property(retain) NSHTTPURLResponse *response;
+@property(retain) NSData *data;
+@property(assign) BOOL didSucceed;
 @property(readonly) NSString *body;
 
 - (id)initWithRequest:(OAMutableURLRequest *)aRequest response:(NSHTTPURLResponse *)aResponse didSucceed:(BOOL)success;
