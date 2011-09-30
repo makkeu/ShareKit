@@ -186,4 +186,8 @@
 	return [NSNumber numberWithBool:false];
 }
 
+- (NSNumber *)assumeNetworkConnection {
+	return [NSNumber numberWithBool:false];
+}
+
 @end

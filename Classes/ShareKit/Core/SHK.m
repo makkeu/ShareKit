@@ -557,6 +557,10 @@ static NSDictionary *sharersDictionary = nil;
 + (BOOL)connected 
 {
 	//return NO; // force for offline testing
+	if([SHKCONFIG(assumeNetworkConnection) boolValue] == YES){
+		return YES;
+	}
+
 	Reachability *hostReach = [Reachability reachabilityForInternetConnection];	
 	NetworkStatus netStatus = [hostReach currentReachabilityStatus];	
 	return !(netStatus == NotReachable);

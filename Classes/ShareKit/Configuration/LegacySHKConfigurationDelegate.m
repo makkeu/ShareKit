@@ -75,7 +75,8 @@
 						 SHKSSharersPlistName, @"sharersPlistName",
 						 [NSNumber numberWithInt:SHK_ALLOW_OFFLINE], @"allowOffline", 
 						 [NSNumber numberWithInt:SHK_ALLOW_AUTOSHARE], @"allowAutoShare", 
-						 [NSNumber numberWithInt:SHKUsePlaceholders], @"usePlaceholder", 
+						 [NSNumber numberWithInt:SHKUsePlaceholders], @"usePlaceholder",
+						 [NSNumber numberWithInt:SHK_ASSUME_NETWORK_CONNECTION], @"assumeNetworkConnection",
 						 nil];
 	}
 	

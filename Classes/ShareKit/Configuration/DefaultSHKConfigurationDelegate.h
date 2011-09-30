@@ -71,4 +71,6 @@
 - (NSNumber*)allowOffline;
 - (NSNumber*)allowAutoShare;
 - (NSNumber*)usePlaceholders;
+- (NSNumber *)assumeNetworkConnection;
+
 @end
