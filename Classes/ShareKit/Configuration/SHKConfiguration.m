@@ -65,7 +65,7 @@ static SHKConfiguration *sharedInstance = nil;
     @synchronized(self)
     {
         if (sharedInstance == nil)
-			sharedInstance = [[SHKConfiguration alloc] initWithDelegate:[[LegacySHKConfigurationDelegate alloc] init]];
+			sharedInstance = [[SHKConfiguration alloc] initWithDelegate:[[[LegacySHKConfigurationDelegate alloc] init] autorelease]];
     }
     return sharedInstance;
 }
