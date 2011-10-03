@@ -190,7 +190,14 @@ BOOL SHKinit;
 			self.isDismissingView = YES;
 			[[currentView parentViewController] dismissModalViewControllerAnimated:animated];
 		}
-		
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+		//we need to check presentingViewController in ios5
+		else if ([currentView respondsToSelector:@selector(presentingViewController)] && [currentView presentingViewController] != nil)
+		{
+			self.isDismissingView = YES;
+			[[currentView presentingViewController] dismissModalViewControllerAnimated:animated];
+		}
+#endif
 		else
 			self.currentView = nil;
 	}
