@@ -96,9 +96,15 @@ static SHKConfiguration *sharedInstance = nil;
 - (id)initWithDelegate:(id <SHKConfigurationDelegate>)delegateIn
 {
     if ((self = [super init])) {
-		delegate = delegateIn;
+		delegate = [delegateIn retain];
     }
     return self;
+}
+
+- (void)dealloc
+{
+	[delegate release]; delegate = nil;
+	[super dealloc];
 }
 
 - (id)copyWithZone:(NSZone *)zone
